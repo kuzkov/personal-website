@@ -4,7 +4,7 @@ import Image from "next/image";
 import avaImage from "@/assets/ava.jpg";
 import { rem } from "polished";
 
-function Hero() {
+export function Hero() {
   return (
     <Box
       display="flex"
@@ -14,7 +14,7 @@ function Hero() {
       alignItems="center"
       justifyContent="center"
     >
-      <Flex direction="column" alignItems="center" textAlign="center">
+      <Flex direction="column" alignItems="center" textAlign="center" px={4}>
         <Box
           w={rem(64)}
           h={rem(64)}
@@ -36,16 +36,25 @@ function Hero() {
           />
         </Box>
         <Text mb={1}>Hi, I’m Artyom Kuzkov and I’m</Text>
-        <Heading mb={1}>Frontend Developer</Heading>
+        <Heading size="3xl" mb={4}>
+          Frontend Developer
+        </Heading>
         <Text maxW={rem(500)} mb={10}>
-          I’m from Belarus and I have been working (Freelance) as a Frontend
-          Developer for more than 2 years.
+          I’m from Belarus and I have been working as a Frontend Developer for
+          more than 2 years.
         </Text>
-        <HStack spacing={4}>
+        <HStack spacing={2}>
           <Button colorScheme="purple" borderRadius="full">
             Hire me
           </Button>
-          <Button colorScheme="purple" variant="ghost" borderRadius="full">
+          <Button
+            as="a"
+            colorScheme="purple"
+            variant="ghost"
+            borderRadius="full"
+            href="/resume.pdf"
+            target="_blank"
+          >
             Download CV
           </Button>
         </HStack>
@@ -53,5 +62,3 @@ function Hero() {
     </Box>
   );
 }
-
-export default Hero;

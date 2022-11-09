@@ -1,10 +1,13 @@
-import { Box, Heading } from "@chakra-ui/react";
-import Hero from "../screens/hero";
+import { Navbar } from "@/components";
+import { Hero, WorkExperience } from "@/screens";
+import { Box } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <Box>
+      <Navbar />
       <Hero />
+      <WorkExperience />
     </Box>
   );
 }
